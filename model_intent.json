@@ -1,0 +1,57 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hey there", "Wassup", "Hello", "Hi", "Whats up", "Good day", "Good morning"
+      ],
+      "responses": [
+        "Hey, good to see you in Anadolu Sigorta Hackathon, please enter your ticket num."
+      ],
+      "context_set": "flight_number"
+    },
+    {
+      "tag": "number",
+      "patterns": [
+        "My number is", "TK", "PC"
+      ],
+      "responses": [
+        "I am searching your number",
+        "Like Google, I am investigating your number"
+      ],
+      "context_filter": "flight_number"
+    },
+    {
+      "tag": "transportation",
+      "patterns": [
+        "I am using metro", "I am going with metro",
+        "boat", "metro", "bus", "car", "Havas", "own car"
+      ],
+      "responses": [
+        "Great, then it should take about"
+      ],
+      "context_set": "should_buy"
+    },
+    {
+      "tag": "confirmation",
+      "patterns": [
+        "yes", "accept", "confirm", "ok"
+      ],
+      "responses": [
+        "Thank you, to proceed payment please go to https://exfil-hackathon.herokuapp.com",
+        "You made your ticker insured, please go to https://exfil-hackathon.herokuapp.com"
+      ],
+      "context_filter": "should_buy"
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "See you", "Good bye", "Bye"
+      ],
+      "responses": [
+        "Chaw!",
+        "Thank you for kindness, love to see you again!"
+      ]
+    }
+  ]
+}
